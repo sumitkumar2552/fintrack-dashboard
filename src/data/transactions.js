@@ -1,0 +1,31 @@
+export const CATEGORIES = [
+  'Salary', 'Freelance', 'Food', 'Transport',
+  'Shopping', 'Utilities', 'Healthcare', 'Entertainment', 'Other',
+];
+
+export const initialTransactions = [
+  { id: 1,  desc: 'Monthly Salary',        amount: 75000, type: 'income',  cat: 'Salary',        date: '2026-03-01' },
+  { id: 2,  desc: 'Grocery Shopping',      amount: 4200,  type: 'expense', cat: 'Food',          date: '2026-03-03' },
+  { id: 3,  desc: 'Uber Rides',            amount: 1800,  type: 'expense', cat: 'Transport',     date: '2026-03-05' },
+  { id: 4,  desc: 'Freelance Project',     amount: 18000, type: 'income',  cat: 'Freelance',     date: '2026-03-08' },
+  { id: 5,  desc: 'Electricity Bill',      amount: 2600,  type: 'expense', cat: 'Utilities',     date: '2026-03-10' },
+  { id: 6,  desc: 'Zomato Orders',         amount: 3100,  type: 'expense', cat: 'Food',          date: '2026-03-12' },
+  { id: 7,  desc: 'Amazon Shopping',       amount: 5400,  type: 'expense', cat: 'Shopping',      date: '2026-03-14' },
+  { id: 8,  desc: 'Doctor Visit',          amount: 1500,  type: 'expense', cat: 'Healthcare',    date: '2026-03-16' },
+  { id: 9,  desc: 'Netflix & Spotify',     amount: 900,   type: 'expense', cat: 'Entertainment', date: '2026-03-18' },
+  { id: 10, desc: 'Monthly Salary',        amount: 75000, type: 'income',  cat: 'Salary',        date: '2026-02-01' },
+  { id: 11, desc: 'Rent',                  amount: 15000, type: 'expense', cat: 'Utilities',     date: '2026-02-02' },
+  { id: 12, desc: 'Restaurant Dinner',     amount: 2800,  type: 'expense', cat: 'Food',          date: '2026-02-08' },
+  { id: 13, desc: 'Freelance Design Work', amount: 12000, type: 'income',  cat: 'Freelance',     date: '2026-02-14' },
+  { id: 14, desc: 'Petrol',                amount: 2200,  type: 'expense', cat: 'Transport',     date: '2026-02-18' },
+  { id: 15, desc: 'Monthly Salary',        amount: 75000, type: 'income',  cat: 'Salary',        date: '2026-01-01' },
+  { id: 16, desc: 'Gym Membership',        amount: 1200,  type: 'expense', cat: 'Healthcare',    date: '2026-01-05' },
+  { id: 17, desc: 'Shopping Mall',         amount: 8500,  type: 'expense', cat: 'Shopping',      date: '2026-01-20' },
+  { id: 18, desc: 'Annual Bonus',          amount: 25000, type: 'income',  cat: 'Salary',        date: '2026-01-31' },
+  { id: 19, desc: 'Monthly Salary',        amount: 75000, type: 'income',  cat: 'Salary',        date: '2025-12-01' },
+  { id: 20, desc: 'New Year Party',        amount: 5000,  type: 'expense', cat: 'Entertainment', date: '2025-12-28' },
+  { id: 21, desc: 'Monthly Salary',        amount: 70000, type: 'income',  cat: 'Salary',        date: '2025-11-01' },
+  { id: 22, desc: 'Phone Bill',            amount: 999,   type: 'expense', cat: 'Utilities',     date: '2025-11-10' },
+  { id: 23, desc: 'Monthly Salary',        amount: 70000, type: 'income',  cat: 'Salary',        date: '2025-10-01' },
+  { id: 24, desc: 'Diwali Shopping',       amount: 12000, type: 'expense', cat: 'Shopping',      date: '2025-10-28' },
+];

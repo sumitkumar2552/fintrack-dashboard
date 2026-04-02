@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# FinTrack - Finance Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean, interactive finance dashboard built with **React 18**, **Tailwind CSS**, **Zustand**, and **Recharts**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Core Requirements
+| Feature | Details |
+|---|---|
+| Dashboard Overview | Summary cards (balance, income, expenses, savings rate), area chart for 6-month balance trend, doughnut chart for spending by category |
+| Transactions Section | Full list with search, filter by type/category, sort by date/amount |
+| Role-Based UI | Admin can add, edit, delete transactions. Viewer gets read-only access. Switch via dropdown in the topbar. |
+| Insights Section | 6 key metric cards + monthly income vs expense bar chart + top spending categories horizontal bar chart |
+| State Management | Zustand store with `persist` middleware — all state survives page refresh via `localStorage` |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Optional Enhancements
+- **Dark mode** — toggle via sun/moon icon in topbar, persisted across sessions
+- **Data persistence** — Zustand + localStorage, no data lost on reload
+- **CSV export** — exports all transactions to `fintrack_transactions.csv`
+- **Animations** — smooth fade-in on page transitions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Layer | Choice | Reason |
+|---|---|---|
+| Framework | React 18 | Component model, hooks, ecosystem |
+| Styling | Tailwind CSS | Utility-first, responsive by default |
+| State | Zustand | Simple, minimal boilerplate, built-in persistence |
+| Charts | Recharts | Declarative, composable, works well with React |
+| Icons | Lucide React | Clean, consistent icon set |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src/
+├── components/
+│   ├── Sidebar.jsx          # Navigation sidebar
+│   ├── Topbar.jsx           # Top header (role switcher, dark mode, export)
+│   ├── SummaryCard.jsx      # Reusable metric card
+│   └── TransactionModal.jsx # Add / Edit transaction modal
+├── context/
+│   └── useStore.js          # Zustand global store
+├── data/
+│   └── transactions.js      # Mock data + categories list
+├── pages/
+│   ├── Dashboard.jsx        # Overview page
+│   ├── Transactions.jsx     # Transactions list page
+│   └── Insights.jsx         # Analytics / insights page
+├── utils/
+│   └── helpers.js           # fmt(), CHART_COLORS, exportToCSV()
+├── App.jsx                  # Root component, page routing
+├── index.js                 # React entry point
+└── index.css                # Tailwind directives + custom utilities
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Setup & Running Locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
+- Node.js v16 or above
+- npm v8 or above
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Steps
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# 1. Clone or unzip the project
+cd fintrack-dashboard
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 2. Install dependencies
+npm install
 
-## Learn More
+# 3. Start development server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app will open at **http://localhost:3000**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Build for production
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Output goes to the `build/` folder — ready to deploy on Vercel, Netlify, or any static host.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Role-Based UI
 
-### Making a Progressive Web App
+| Feature | Admin | Viewer |
+|---|---|---|
+| View dashboard, transactions, insights | ✅ | ✅ |
+| Add transaction | ✅ | ❌ |
+| Edit transaction | ✅ | ❌ |
+| Delete transaction | ✅ | ❌ |
+| Export CSV | ✅ | ✅ |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Switch roles using the dropdown in the topbar — no login required (frontend simulation).
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Assumptions
 
-### Deployment
+- All data is mock/static — no backend or real API calls
+- Roles are simulated on the frontend for demo purposes only
+- Currency is in INR (₹)
+- "6 months" in charts refers to Oct 2025 – Mar 2026
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Run the app locally at `http://localhost:3000` to see the full UI with dark mode and responsive layout.
+
+---
+
+## Author
+
+**Sumit Kumar** — Frontend Developer Intern Assignment  
+Zorvyn FinTech Pvt. Ltd.
