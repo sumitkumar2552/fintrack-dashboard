@@ -13,13 +13,13 @@ A clean, interactive finance dashboard built with **React 18**, **Tailwind CSS**
 | Transactions Section | Full list with search, filter by type/category, sort by date/amount |
 | Role-Based UI | Admin can add, edit, delete transactions. Viewer gets read-only access. Switch via dropdown in the topbar. |
 | Insights Section | 6 key metric cards + monthly income vs expense bar chart + top spending categories horizontal bar chart |
-| State Management | Zustand store with `persist` middleware — all state survives page refresh via `localStorage` |
+| State Management | Zustand store with `persist` middleware - all state survives page refresh via `localStorage` |
 
 ### Optional Enhancements
-- **Dark mode** — toggle via sun/moon icon in topbar, persisted across sessions
-- **Data persistence** — Zustand + localStorage, no data lost on reload
-- **CSV export** — exports all transactions to `fintrack_transactions.csv`
-- **Animations** — smooth fade-in on page transitions
+- **Dark mode** - toggle via sun/moon icon in topbar, persisted across sessions
+- **Data persistence** - Zustand + localStorage, no data lost on reload
+- **CSV export** - exports all transactions to `fintrack_transactions.csv`
+- **Animations** - smooth fade-in on page transitions
 
 ---
 
@@ -82,13 +82,14 @@ npm start
 
 The app will open at **http://localhost:3000**
 
-### Build for production
 
-```bash
-npm run build
-```
+---
 
-Output goes to the `build/` folder — ready to deploy on Vercel, Netlify, or any static host.
+
+## Live Demo
+
+- **Live:** https://fintrack-dashboard-seven.vercel.app/
+
 
 ---
 
@@ -102,26 +103,21 @@ Output goes to the `build/` folder — ready to deploy on Vercel, Netlify, or an
 | Delete transaction | ✅ | ❌ |
 | Export CSV | ✅ | ✅ |
 
-Switch roles using the dropdown in the topbar — no login required (frontend simulation).
+Switch roles using the dropdown in the topbar - no login required (frontend simulation).
 
 ---
 
 ## Assumptions
 
-- All data is mock/static — no backend or real API calls
+- All data is mock/static - no backend or real API calls
 - Roles are simulated on the frontend for demo purposes only
 - Currency is in INR (₹)
-- "6 months" in charts refers to Oct 2025 – Mar 2026
+- "6 months" in charts refers to Oct 2025 - Mar 2026
 
----
-
-## Screenshots
-
-> Run the app locally at `http://localhost:3000` to see the full UI with dark mode and responsive layout.
 
 ---
 
 ## Author
 
-**Sumit Kumar** — Frontend Developer Intern Assignment  
+**Sumit Kumar** - Frontend Developer Intern Assignment  
 Zorvyn FinTech Pvt. Ltd.
